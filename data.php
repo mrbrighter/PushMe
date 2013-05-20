@@ -26,7 +26,7 @@ function getdata($arg1)
 				$anzahlapps = $json_output->{'resultCount'};
 
 				// Ausgabe der gesuchten APP und die Anzahl der Treffer
-				//echo "Search : $searchApp<span class=\"ui-li-count\"></span>  - $anzahlapps Apps found ";
+				echo "Search : $searchApp<span class=\"ui-li-count\"></span>  - $anzahlapps Apps found ";
 
 				for($count = 0; $count < $anzahlapps ; $count++){    
 				   // Icon-Pfad zuweisen    
