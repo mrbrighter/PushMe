@@ -29,14 +29,12 @@
                 <script type="text/javascript">
                 
                         function renderItem(item){
-                                return '<li>' 
-                                + '<a href="' + item["trackViewUrl"] + '">' 
-                                + '<img src="' + item["artworkUrl60"] + '"/>'
+                                return '<li data-role="list-divider">' 
+                                + '<a href="' + item["artistViewUrl"] + '"/>' 
+                                + '<img src="' + item["artworkUrl60"] + '" class="ui-li-icon ui-li-thumb"/>'
                                 + '<h2>' + item["trackName"] + '</h2>'
                                 + '<h3>Beschreibung:</h3>'
                                 + '<p>' + item["description"] + '</p>'
-								+ '</a>'
-								+ '<a href="#pushCheck" data-rel="popup" data-position-to="window" data-transition="pop">Push ME</a>'
                                 + '</li>';
                         }
                 
@@ -55,6 +53,7 @@
                                         html: items.join('')
                                 }).appendTo('#bereich1');
                                 _ul.listview();
+								console.log(items);
                         }
 
                         /*eventhandler wenn dokument komplett geladen wurde*/
@@ -74,31 +73,61 @@
                                         });
                         });
                 </script>
+
         </head>
         
         <body>
                 <div data-role="page" data-theme="a">
                         <div data-role="header" data-position="inline">
-                                <h1>PushWhenFree</h1>     
+                                <h1>PushWhenFree</h1>
+                                
+                                
                                 <!-- Suchleiste ruf Script auf -->
                                 <form id="my_form">
                                          <label for="search1">Search:</label>
-                                         <input id="search1" name="search1" value="Skype" type="search">
+                                         <input id="search1" name="search1" value="teleboy" type="search">
                                 </form>
+                                
+
                         </div>
-						
-						<div id="bereich1">
-                        </div>
+                                <div id="bereich1">
+
+                                <div data-role="content" data-theme="a">
+                                <ul data-role="listview" data-split-icon="gear" data-split-theme="d">
+
+                                <li><a href="https://itunes.apple.com/us/app/telebal-pro/id587781361?mt=8&uo=4">
+                                <img src="http://a1131.phobos.apple.com/us/r1000/063/Purple/v4/f2/43/f5/f243f5fb-1fa4-a08e-1e81-33c28e6dcc5c/icon.png" />
+                                <h3>Dummy Ausgabe zum Debug</h3>
+                                <p>Test Text ......... #######</p>                      
+                                </a>
+                                <a href="#pushCheck" data-rel="popup" data-position-to="window" data-transition="pop">Push ME
+                                </a>
+ 
+                                </li> 
+                                </ul>
+								
+								<li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-bar-b ui-li-has-icon ui-first-child">
+								
+								<a href="https://itunes.apple.com/de/artist/cinergy/id338813782?uo=4"></a>
+							    <img class="ui-li-icon ui-li-thumb" src="http://a399.phobos.apple.com/us/r1000/093/Purple2/v4/a8/5b/48/a85b482d-8257-0174-2538-c58ab65625ab/icon.png">
+							    <h2 class="ui-li-heading">Teleboy TV - Live TV, Recorder, Programm &amp; Tipps</h2><h3 class="ui-li-heading">Beschreibung:</h3>
+								<p class="ui-li-desc">„Die beste Bildqualität unte.</p></li>
 								
 								
-                        <!-- Hier ist das POPUP für den Push Button -->
+                                </div>
+
+                                
+                                
+                                
+                                
+                                <!-- Hier ist das POPUP für den Push Button -->
                         <div data-role="popup" id="pushCheck" data-overlay-theme="b" class="ui-content" style="max-width:340px;">
                         <h3>Push YOU ??</h3>
                         <p>do you want a push notification when the app is free?</p>
                         <a href="index.html" data-role="button" data-rel="back" data-icon="check" data-inline="true" data-mini="true">Push me when its Free</a>
                         <a href="index.html" data-role="button" data-rel="back" data-inline="true" data-mini="true">Cancel</a>  
                         </div>
-                                
+                                </div>
                 </div>
         </body>
 </html>
